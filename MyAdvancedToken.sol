@@ -3,7 +3,7 @@ pragma solidity ^0.4.16;
 contract owned {
     address public owner;
 
-    function owned() public {
+    constructor () public {
         owner = msg.sender;
     }
 
@@ -42,7 +42,7 @@ contract TokenERC20 {
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
-    function TokenERC20(
+    constructor (
         uint256 initialSupply,
         string tokenName,
         string tokenSymbol
@@ -184,7 +184,7 @@ contract MyAdvancedToken is owned, TokenERC20 {
     event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function MyAdvancedToken(
+    constructor (
         uint256 initialSupply,
         string tokenName,
         string tokenSymbol
